@@ -1,20 +1,20 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const CREATE_MEETING = 'CREATE_MEETING';
-const CANCEL_MEETINGS = 'CANCEL_MEETINGS';
-const SET_MEETINGS = 'SET_MEETINGS';
+const CREATE_MEETING = 'CREATE_MEETING'
+const CANCEL_MEETINGS = 'CANCEL_MEETINGS'
+const SET_MEETINGS = 'SET_MEETINGS'
 
 export const setMeetings = meetings => {
   return {
     type: SET_MEETINGS,
-    meetings,
+    meetings
   }
 }
 
 export const createMeeting = meeting => {
   return {
     type: CREATE_MEETING,
-    meeting,
+    meeting
   }
 }
 
@@ -25,37 +25,39 @@ export const cancelMeetings = () => {
 }
 
 export const createMeetingThunk = () => dispatch => {
-  axios.post('http://localhost:4001/api/meetings')
-  .then(res => res.data)
-  .then(createdMeeting => {
-    dispatch(createMeeting(createdMeeting));
-  })
-  .catch(console.error.bind(console));
+  axios
+    .post('http://localhost:4001/api/meetings')
+    .then(res => res.data)
+    .then(createdMeeting => {
+      dispatch(createMeeting(createdMeeting))
+    })
+    .catch(console.error.bind(console))
 }
 
 export const cancelMeetingsThunk = () => dispatch => {
-  axios.delete('http://localhost:4001/api/meetings')
-  .then(() => {
-    dispatch(cancelMeetings());
-  })
-  .catch(console.error.bind(console));
+  axios
+    .delete('http://localhost:4001/api/meetings')
+    .then(() => {
+      dispatch(cancelMeetings())
+    })
+    .catch(console.error.bind(console))
 }
 
-const initial = [];
+const initial = []
 
 export default (initialState = initial, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case CREATE_MEETING:
-      const newMeetings = [action.meeting, ...initialState];
-      newMeetings.sort((a, b) => { 
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
-      });
-      return newMeetings;
+      const newMeetings = [action.meeting, ...initialState]
+      newMeetings.sort((a, b) => {
+        return new Date(a.date).getTime() - new Date(b.date).getTime()
+      })
+      return newMeetings
     case CANCEL_MEETINGS:
-      return [];
+      return []
     case SET_MEETINGS:
-      return action.meetings;
+      return action.meetings
     default:
-      return initialState;
+      return initialState
   }
 }
