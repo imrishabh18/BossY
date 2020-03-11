@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const MinionEdit = ({
   name,
@@ -9,31 +9,31 @@ const MinionEdit = ({
   submit
 }) => {
   return (
-    <div className="minion-edit">
-      <div className="minion-edit-single-rows">
-        <div className="minion-edit-row">
-          <div className="minion-edit-label">Name:</div>
+    <div className='minion-edit'>
+      <div className='minion-edit-single-rows'>
+        <div className='minion-edit-row'>
+          <div className='minion-edit-label'>Name:</div>
           <input
-            name="name"
-            type="text"
+            name='name'
+            type='text'
             value={name}
             onChange={handleChange}
           ></input>
         </div>
-        <div className="minion-edit-row">
-          <div className="minion-edit-label">Title:</div>
+        <div className='minion-edit-row'>
+          <div className='minion-edit-label'>Title:</div>
           <input
-            name="title"
-            type="text"
+            name='title'
+            type='text'
             value={title}
             onChange={handleChange}
           ></input>
         </div>
-        <div className="minion-edit-row">
-          <div className="minion-edit-label">alary:</div>
+        <div className='minion-edit-row'>
+          <div className='minion-edit-label'>alary:</div>
           <input
-            name="salary"
-            type="text"
+            name='salary'
+            type='text'
             value={salary}
             onChange={handleChange}
           ></input>
@@ -42,14 +42,14 @@ const MinionEdit = ({
       <div>Weaknesses:</div>
       <div>
         <textarea
-          className="minion-input-textarea"
-          name="weaknesses"
+          className='minion-input-textarea'
+          name='weaknesses'
           value={weaknesses}
           onChange={handleChange}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MinionEdit;
+export default MinionEdit

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const MinionDescription = ({name, title, salary, weaknesses}) => {
+const MinionDescription = ({ name, title, salary, weaknesses }) => {
   return (
     <div>
       <p>Name: {name}</p>
@@ -11,4 +11,4 @@ const MinionDescription = ({name, title, salary, weaknesses}) => {
   )
 }
 
-export default MinionDescription;
+export default MinionDescription
