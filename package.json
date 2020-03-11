@@ -7,7 +7,8 @@
     "test": "cross-env PORT=8000 mocha --watch",
     "start-dev": "webpack -w & nodemon --watch server.js --watch server/",
     "start": "nodemon --watch server.js --watch server/",
-    "postinstall": "webpack -p"
+    "postinstall": "webpack -p",
+    "format": "prettier-standard --format"
   },
   "author": "Codecademy",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "faker": "^4.1.0",
+    "prettier-standard": "^16.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

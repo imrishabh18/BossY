@@ -34,7 +34,10 @@ const Login = () => {
       </Link>
       <br />
       <br />
-      <p>Don't have an account, Sigup then.</p>
+      <p>
+        Don't have an account,
+        <br /> <br /> Sigup then.
+      </p>
       <br />
       <Link to="/signup">
         <button onClick={() => this.login()}>Signup</button>
@@ -45,6 +48,6 @@ const Login = () => {
 
 const login = () => {
   //Authenticating the details entered by the user.
-}
+};
 
 export default Login;
